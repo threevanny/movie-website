@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .row
+    .col-md-4.m-auto.pt-2
+      .card.shadow
+        .card-header
+          p.h3.text-center Create New Anime
+        .card-body
+          form(action='' method='POST' enctype='multipart/form-data')
+            .form-group
+              label(for='title') Title
+              input.form-control(type='text' name='title' id='title' placeholder='Movie title' value='')
+            .form-group
+              label(for='poster') Poster
+              input.form-control(type='file' name='poster' id='poster' placeholder='' accept="image/*, .webp" value='')
+            .form-group
+              label(for='synopsis') Synopsis
+              textarea.form-control(type='textarea' name='synopsis' id='synopsis' placeholder='Write a brief synopsis')
+            .form-group
+              label(for='rating') Year
+              input.form-control(type='number' name='rating' id='rating' placeholder='rating' min=1.0 max=10.0 step=0.1 value='5.0')
+            .form-group
+              label(for='year') Year
+              input.form-control(type='number' name='year' id='year' placeholder='year' min='1000' value='2020')
+            button.btn.btn-primary.btn-block(type='submit') Save
