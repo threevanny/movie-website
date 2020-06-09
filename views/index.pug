@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    h1 Movie List
+    .row
+      for movie in movies
+        .col-4.col-sm-2
+          .card
+            a(href="#")
+              img.img-fluid(src=`${movie.poster}`, alt="", srcset="")
+          p.text-center
+            small= movie.title

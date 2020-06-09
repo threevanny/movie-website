@@ -3,8 +3,12 @@ const Movie = require('../models/Movie');
 
 indexCtrl.renderIndex = (req, res) => {
   // render view index
-  const movies = Movie.find({}).sort({ title: 'asc' });
-  res.render('index', { title: 'Movies', movies });
+  Movie.find({}, function (err, docs) {
+    if (err) {
+      console.log(err);
+    }
+    res.render('index', { title: 'Movies', 'movies': docs });
+  }).sort({ title: 'asc' });
 };
 
 indexCtrl.renderTop = (req, res) => {
