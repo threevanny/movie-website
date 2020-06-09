@@ -13,8 +13,12 @@ indexCtrl.renderIndex = (req, res) => {
 
 indexCtrl.renderTop = (req, res) => {
   // render view top
-  const movies = Movie.find({}).sort({ rating: 'desc' });
-  res.render('top', { title: 'Top', movies });
+  Movie.find({}, function (err, docs) {
+    if (err) {
+      console.log(err);
+    }
+    res.render('top', { title: 'Top', 'movies': docs });
+  }).sort({ rating: 'desc' });
 };
 
 indexCtrl.renderForm = (req, res) => {
