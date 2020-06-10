@@ -4,8 +4,8 @@ Simple movies website example with nodejs and mongodb. the web can upload images
 
 ## Screenshots
 
-![](screnshots/screnshot-1.png)
-![](screnshots/screnshot-2.png)
+![](screenshots/screenshot-1.png)
+![](screenshots/screenshot-2.png)
 
 ## Installation
 
