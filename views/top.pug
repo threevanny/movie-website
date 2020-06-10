@@ -2,8 +2,20 @@ extends layout
 
 block content
   .container
-    h1 Movie List
+    h1 Movie Ranking
     .row
-      for movie in movies
-        p= movie.rating
-        |&nbsp;
+      table.table.table-hover
+        thead.thead-light
+          tr
+            th.font-weight-bold(scope='col') Rating
+            th.font-weight-bold(scope='col') Title
+            th.font-weight-bold(scope='col') Year
+        tbody
+          for movie in movies
+            tr
+              th(scope='row')
+                p= movie.rating
+              td
+                a(href=`/movie/${movie._id}`)=movie.title
+              td
+                span=movie.year
