@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-md-12.text-center.pt-2.pb-2
+        h1=movie.title
+        span average rating
+          h3.text-success=movie.rating
+    .row
+      .col-md-4.text-center
+        img.imge-fluid.hover-img.img-m(src=`../${movie.poster}`, alt=`poster ${movie.title}`, srcset="")
+        h3=movie.year
+      .col-md-8
+        h4 synopsis
+        p.text-justify=movie.synopsis

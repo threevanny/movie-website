@@ -44,4 +44,14 @@ indexCtrl.saveMovie = async (req, res) => {
   res.redirect('/');
 };
 
+indexCtrl.showMovie = (req, res) => {
+  const { id } = req.params;
+  Movie.findById(id, function (err, docs) {
+    if (err) {
+      console.log(err);
+    }
+    res.render('movie', { title: docs.title, 'movie': docs });
+  });
+}
+
 module.exports = indexCtrl;
