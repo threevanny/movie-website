@@ -1,8 +1,32 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka One', cursive;
+}
+
+body {
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #ECE9E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.logo {
+  font-family: 'Fredoka One', cursive;
+}
+
+.img-m{
+  width: 80%;
+}
+
+.hover-img:hover {
+  -webkit-box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.46);
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.46);
 }
