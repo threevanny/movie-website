@@ -2,14 +2,13 @@ extends layout
 
 block content
   .container
-    .row
-      .col-md-12
-        h1.pt-2.pb-2 Movie List
-    .row
-      for movie in movies
-        .col-4.col-sm-2
-          .card.border-0
-            a(href=`/movie/${movie._id}`)
-              img.img-fluid.hover-img(src=`${movie.poster}`, alt="", srcset="")
-          p.text-center
-            small= movie.title
+    h1.title Movie List
+    section.section
+      .columns.is-multiline
+        for movie in movies
+          .column.is-12-mobile.is-4-tablet.is-2-desktop
+            figure.image
+              a(href=`/movie/${movie._id}`)
+                img.hover-img(src=`${movie.poster}`, alt="")
+            p.has-text-centered
+              small=movie.title
