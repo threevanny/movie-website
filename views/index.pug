@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  .container
-    h1.title Movie List
-    section.section
-      .columns.is-multiline
+  section.section
+    .container.mt-5.mb-5
+      h1.title Movie List
+    .container
+      .columns.is-multiline.is-mobile
         for movie in movies
-          .column.is-12-mobile.is-4-tablet.is-2-desktop
-            figure.image
+          .column.is-4-mobile.is-3-tablet.is-2-desktop
+            figure.image.is-2by3.zoom
               a(href=`/movie/${movie._id}`)
                 img.hover-img(src=`${movie.poster}`, alt="")
             p.has-text-centered
