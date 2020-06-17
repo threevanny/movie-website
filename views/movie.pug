@@ -1,16 +1,20 @@
 extends layout
 
 block content
-  .container
-    .row
-      .col-md-12.text-center.pt-2.pb-2
-        h1=movie.title
-        span average rating
-          h3.text-success=movie.rating
-    .row
-      .col-md-4.text-center
-        img.imge-fluid.hover-img.img-m(src=`../${movie.poster}`, alt=`poster ${movie.title}`, srcset="")
-        h3=movie.year
-      .col-md-8
-        h4 synopsis
-        p.text-justify=movie.synopsis
+  section.section
+    .container
+      .columns.is-mobile
+        .column.is-12.has-text-centered.mt-2
+          .content
+            h1.title=movie.title
+            span average rating
+              h3.title.has-text-success=movie.rating
+      .columns
+        .column.is-one-fifth.has-text-centered
+          figure.image
+            img.img-m(src=`../${movie.poster}`, alt=`poster ${movie.title}`, srcset="")
+          h3.subtitle=movie.year
+        .column
+          .content
+            h4.subtitle synopsis
+            p=movie.synopsis

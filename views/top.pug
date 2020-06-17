@@ -1,21 +1,27 @@
 extends layout
 
 block content
-  .container
-    h1 Movie Ranking
-    .row
-      table.table.table-hover
-        thead.thead-light
-          tr
-            th.font-weight-bold(scope='col') Rating
-            th.font-weight-bold(scope='col') Title
-            th.font-weight-bold(scope='col') Year
-        tbody
-          for movie in movies
-            tr
-              th(scope='row')
-                p= movie.rating
-              td
-                a(href=`/movie/${movie._id}`)=movie.title
-              td
-                span=movie.year
+  section.section
+    .container
+      .columns
+        .column
+          h1.title Movie Ranking
+          .container
+            table.table.is-hoverable.is-fullwidth
+              thead
+                tr
+                  th
+                    p Rank
+                  th
+                    p Título
+                  th
+                    p Year
+              tbody
+                for movie in movies
+                  tr
+                    th
+                      p= movie.rating
+                    td
+                      a(href=`/movie/${movie._id}`)=movie.title
+                    td
+                      p=movie.year
